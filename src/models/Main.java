@@ -2,25 +2,53 @@ package models;
 
 import service.CustomerService;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
         CustomerService customerService=new CustomerService();
         System.out.println("***WELCOME TO MOHI ONLINE SHOP***");
+        System.out.println("please first register ");
         customerService.register();
-        showMenu();
+        int choice;
+        choice:
+        do {
+           showMenu();
+            choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
 
+                    printStar();
+                    break;
 
+                case 2:
 
+                    printStar();
+                    break;
 
+                case 3:
+
+                    printStar();
+                    break;
+
+                case 4:
+
+                    printStar();
+                    break;
+            }
+        } while (true);
     }
     public static void showMenu(){
-        System.out.println(" .افزودن محصول به سبد خرید\n" +
-                "2 .حذف محصول از سبد خرید\n" +
-                "3 .چاپ لیست کلیه محصوالت اضافه شده به سبد خرید به همراه تعداد آ نها\n" +
-                "4 .چاپ مجموعه قیمت های آیتم های سبد خرید\n" +
-                "5 .تایید نهایی خرید با تایید کاربر\n" +
-                "6 .همچنین موجودی فروشگاه متناسب با تعداد موارد خریداری شده بروزرسانی شود.");
+        System.out.println("choose from below:\n" +
+                "1.Add product to cart  \n" +
+                "2.Remove product from cart  \n" +
+                "3.Show a list of products with details \n" +
+                "4.Show the total prices cart  \n" +
+                "your choice is:");
     }
-
+    public static void printStar() {
+        System.out.println("**********************************************************");
+    }
 }
